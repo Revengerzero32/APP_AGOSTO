@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-title>Inicio RegistrAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="logo-container">
+ <img #logo src="assets/icon/logoduocuc.png" alt="Logotipo de la Empresa" class="logo" />
+  </div>
+ 
+  <form  (ngSubmit)="onLoginAlumno()">
+    <ion-button expand="block" type="submit  " color="success">Ingresar a Login Alumno</ion-button>
+   </form>
+   <br>
+   
+ 
+
+   <form (ngSubmit)="onLoginDocente()">
+   <ion-button expand="block" type="submit  ">Ingresar a Login Docente</ion-button>
+     </form>
+ 
+ </ion-content>

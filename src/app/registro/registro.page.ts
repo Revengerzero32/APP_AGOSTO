@@ -17,13 +17,13 @@ interface Persona{
 
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-registro',
+  templateUrl: 'registro.page.html',
+  styleUrls: ['registro.page.scss'],
   standalone: true,
   imports: [IonicModule, FormsModule,CommonModule],
 })
-export class HomePage implements OnInit{
+export class RegistroPage implements OnInit{
 
   nombre:string =''
   edad=''
@@ -123,6 +123,11 @@ async modificar() {
  this.carrera="";
 
 }// fin modificar
+onLoginAlumno() {
+  this.router.navigate(['login']);
+
+ 
+} // Fin onLoginAlumno
 
 
 } // Fin

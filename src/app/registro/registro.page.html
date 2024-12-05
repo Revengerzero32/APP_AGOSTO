@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-title>Inicio RegistrAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <div class="logo-container">
+      <img #logo src="assets/icon/logoduocuc.png" alt="Logotipo de la Empresa" class="logo" />
+    </div>
+
+    <ion-item>
+      <ion-label position="stacked">Nombre de Usuario</ion-label>
+      <ion-input type="text" [(ngModel)]="nombre" placeholder="Ingrese su Nombre de Usuario" maxlength="16" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Edad</ion-label>
+      <ion-input type="number" [(ngModel)]="edad" placeholder="Ingrese su Edad" max="10" min="2"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Carrera</ion-label>
+      <ion-select [(ngModel)]="carrera" placeholder="Seleccione una carrera">
+        <ion-select-option value="Ingenieria">Ingenieria en Informatica</ion-select-option>
+        <ion-select-option value="Analista">Analista Programador</ion-select-option>
+        <ion-select-option value="Enfermeria">Tecnico en Enfermeria</ion-select-option>
+        <ion-select-option value="Preparador">Preparador Fisico</ion-select-option>
+        <ion-select-option value="Geologia">Tecnico en Geologia</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="stacked">Contraseña</ion-label>
+      <ion-input type="password" placeholder="Ingrese su Contraseña" maxlength="8"></ion-input>
+    </ion-item>
+
+    <form  (ngSubmit)="onLoginAlumno()">
+    <ion-button expand="block" type="submit"  (click)="agregar()">Registrar</ion-button>
+    </form>
+    
+  </ion-card>
+</ion-content>

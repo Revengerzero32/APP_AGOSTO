@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>LoginDocente-RegistrAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-title>Login - Docente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ <div class="logo-container">
+<img #logo src="assets/icon/logoduocuc.png" alt="Logotipo de la Empresa" class="logo" />
+ </div>
+
+ <form [formGroup]="logindocenteForm" (ngSubmit)="onLoginProfe()">
+  <ion-item>
+      <ion-label position="stacked">Usuario</ion-label>
+      <ion-input  formControlName="username"  placeholder="Ingresa Usuario" maxlength="16"></ion-input>
+  </ion-item>
+
+  <div *ngIf="logindocenteForm.get('username')?.invalid &&  logindocenteForm.get('username')?.touched">Error Usuario (El usuario debe tener un largo minimo de 3 y maximo de 16)</div>
+
+  <ion-item>
+    <ion-label position="stacked">Contraseña</ion-label>
+    <ion-input  formControlName="password" type="password" placeholder="****" maxlength="8"></ion-input>
+</ion-item>
+<div *ngIf="logindocenteForm.get('password')?.invalid &&  logindocenteForm.get('password')?.touched">Error Contraseña (La contraseña debe ser solo numeros y tener un largo maximo de 8)</div>
+
+
+<ion-button expand="block" type="submit  [disabled]= logindocenteForm.valid" color="success">Ingresar</ion-button>
+  </form>
+
+   <form  (ngSubmit)="onLoginRegistro()">
+    <h3>Todavia no tienes una cuenta?</h3>
+    <h5>Registrate pulsando el boton de abajo!</h5>
+    <ion-button expand="block" type="submit">Registrar</ion-button>
+  </form>
+
+
+</ion-content>

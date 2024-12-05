@@ -1,0 +1,27 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title>Bienvenido Profesor - Seleccione la carrera en la cual tiene clases en este momento</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    
+    <ion-label position="stacked"></ion-label>
+      <ion-select  [(ngModel)]="qrData"  placeholder="Seleccione una carrera" >
+      <ion-select-option value="Ingenieria en Informatica">Ingenieria en Informatica</ion-select-option>
+      <ion-select-option value="Analista Programador">Analista Programador</ion-select-option>
+      <ion-select-option value="Tecnico en Enfermeria">Tecnico en Enfermeria</ion-select-option>
+      <ion-select-option value="Preparador Fisico">Preparador Fisico</ion-select-option>
+      <ion-select-option value="Tecnico en Geologia">Tecnico en Geologia</ion-select-option>
+
+      </ion-select>
+  </ion-item>
+  <ion-button expand="full" (click)="generateQRCode()">Generar QR</ion-button>
+
+  
+  <div *ngIf="createdCode">
+
+    <qrcode [qrdata]="createdCode" [width]="300" [errorCorrectionLevel]="'M'"></qrcode>
+  </div>
+</ion-content>
